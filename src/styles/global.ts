@@ -1,3 +1,8 @@
+import {createGlobalStyle} from "styled-components"
+import "normalize.css"
+
+export const GlobalStyle = createGlobalStyle`
+
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -21,3 +26,5 @@ html {
     max-width: 100%;
     height: auto;
   }
+`
+

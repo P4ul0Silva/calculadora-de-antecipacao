@@ -1,4 +1,3 @@
-import React from 'react';
 import { AntecipationCalc } from './components/Business/AntecipationCalc/AntecipationCalc';
 
 function App() {
