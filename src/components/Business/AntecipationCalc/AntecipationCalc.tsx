@@ -11,6 +11,7 @@ export const AntecipationCalc = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IAntecipationCalcData>();
 
     function getResults(data: IAntecipationCalcData) {
+        alert("funcao")
         if(data.days) {
             setDays(data.days)
         } else {
@@ -24,7 +25,6 @@ export const AntecipationCalc = () => {
             days: data.days 
         }).then(({data}) => {
             const values: number[] = Object.values(data);
-            console.log(values)
                 if(values) {
                     setResult(values)
                 }
@@ -64,7 +64,7 @@ export const AntecipationCalc = () => {
                         </>
                         :
                         days.map((d, i) => 
-                            <li>{d === 1 ? "Amanhã: " : 
+                            <li key={d}>{d === 1 ? "Amanhã: " : 
                             `Em ${days[i]} dias:`} 
                             {<b>{`R$ ${result[i].toLocaleString()}`}</b>}</li>)
                     }
