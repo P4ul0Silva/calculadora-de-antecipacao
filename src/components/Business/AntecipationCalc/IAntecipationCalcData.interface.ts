@@ -5,8 +5,3 @@ export interface IAntecipationCalcData {
     mdr: number;
     days?: [number]
 }
-
-export interface IAntecipationResultData {
-
-    [index: number]: [number];
-}
