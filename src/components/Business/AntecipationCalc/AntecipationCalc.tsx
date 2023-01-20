@@ -24,7 +24,6 @@ export const AntecipationCalc = () => {
             days: data.days 
         }).then(({data}) => {
             const values: number[] = Object.values(data);
-            console.log(values)
                 if(values) {
                     setResult(values)
                 }
@@ -42,12 +41,12 @@ export const AntecipationCalc = () => {
                         <input {...register("amount", {required: true, minLength: 4})} type="text" name="amount" id="amount" placeholder="1000" />
                         {errors.amount && <span>Campo obrigatório</span>}
                         <label htmlFor="installments">Em quantas parcelas</label>
-                        <input {...register("installments", {required: true, maxLength: 2})}type="text" name="installments" id="installments" placeholder="12"/>
-                        {errors.amount && <span>Campo obrigatório</span>}
+                        <input {...register("installments", {required: {value:true, message: "Campo requer o número de parcelas"}, maxLength: 2})}type="text" name="installments" id="installments" placeholder="12"/>
+                        {errors.installments && <span>Campo obrigatório</span>}
                         <small>Máximo de 12 parcelas.</small>
                         <label htmlFor="mdr">Informe o percentual de MDR</label>
                         <input {...register("mdr", {required: true, maxLength: 3})} type="text" name="mdr" id="mdr" placeholder="ex: 2"/>
-                        {errors.amount && <span>Campo obrigatório</span>}
+                        {errors.mdr && <span>Campo obrigatório</span>}
                     </form>
                 </div>
             <div className='results'>
@@ -64,7 +63,7 @@ export const AntecipationCalc = () => {
                         </>
                         :
                         days.map((d, i) => 
-                            <li>{d === 1 ? "Amanhã: " : 
+                            <li key={d}>{d === 1 ? "Amanhã: " : 
                             `Em ${days[i]} dias:`} 
                             {<b>{`R$ ${result[i].toLocaleString()}`}</b>}</li>)
                     }
