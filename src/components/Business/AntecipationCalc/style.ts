@@ -6,6 +6,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--container-background-color);
   }
 
   .wrapper {
@@ -13,56 +14,95 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    background: #ffff;
+    background: var(--wrapper-primary-color);
 
     height: 389px;
     width: 608px;
 
+    border: 1px solid var(--wrapper-border-color);
     border-radius: 4px;
   }
 
   .inputs {
-    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    padding: 0 8%;
+
+    height: inherit;
+
+    h2 {
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: 700;
+    color: var(--title-color);
+  };
     form {
       display: flex;
       flex-direction: column;
-      width: fit-content;
-
-      label {
-        text-align: left;
-      }
-
+      gap: .5rem;
+    
+    label {
+      font-size: 14px;
+      line-height: 16px;
+      color: #656565;
+      text-align: left;
+    }
+      
       input {
         width: 251px;
         height: 37px;
+        padding: 5px;
 
         border: 1px solid #dde6e9;
         border-radius: 4px;
-        
+
         :focus {
           outline: none;
         }
       }
       
       span {
-        font-size: 0.8rem;
-        color: #ff0000;
+        font-size: 11px;
+        line-height: 13px;
+
+        color: #CECECE;
       }
     }
   }
 
   .results {
-    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 42px;
+    color: var(--text-secondary-color);
+
+    padding: 0 5%;
+
+    height: inherit;
+
     font-style: italic;
 
-    li {
+    background-color: var(--wrapper-secondary-color);
+
+    h3 {
+      color: var(--title-secondary-color);
+      border-bottom: 1px solid rgba(93, 156, 236, .3);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 30px;
+      text-transform: uppercase;
       
     }
 
-    span {
-      display: block;
-      color: blue;
+    li {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 50px;
     }
   }
 `;
