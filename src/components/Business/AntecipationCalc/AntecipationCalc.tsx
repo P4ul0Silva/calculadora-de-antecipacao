@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Container } from "./style"
 import { IAntecipationCalcData } from "./IAntecipationCalcData.interface";
 import { api } from "../../../services/api";
-import { DateModal } from "../DateModal/dateModal";
 
 export const AntecipationCalc = () => {
 
@@ -12,7 +11,6 @@ export const AntecipationCalc = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IAntecipationCalcData>();
 
     function getResults(data: IAntecipationCalcData) {
-        alert("funcao")
         if(data.days) {
             setDays(data.days)
         } else {
@@ -34,7 +32,6 @@ export const AntecipationCalc = () => {
 
     return (
         <Container>
-            {/* <DateModal/> */}
             <div className="container">
             <div className="wrapper">
                 <div className='inputs'>
